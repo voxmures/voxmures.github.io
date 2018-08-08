@@ -49,7 +49,7 @@ module.exports = {
 	},
 	plugins: [
 		new VueLoaderPlugin(),
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(['dist/*']),
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'index.html',

@@ -45,7 +45,6 @@ const moduleDecorator = (name, _store) => {
 			return {
 				module,
 				register: () => {
-					debugger;
 					store.registerModule('$_' + name, module);
 					if (typeof module['init'] === 'function')
 						module.init(store);
