@@ -10,7 +10,6 @@ import { Component } from 'vue-property-decorator';
 import Layout from './Layout';
 
 @Component({
-    name: 'App',
     components: {
         Layout
     }

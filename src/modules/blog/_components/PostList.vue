@@ -1,6 +1,6 @@
 <template>
-    <div class="w-1/3 m-auto">
-        <template v-for="{ title, date, id } in posts">
+    <div>
+        <template v-for="{ title, date } in posts">
             <div class="rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
@@ -16,33 +16,23 @@
                 </div>
             </div>
         </template>
-        <!-- <Post :post-id="selected"></Post> -->
-        <!-- <ul>
-            <li v-for="{ title, date, id } in posts" :key="id" @click="selectPost(id)">
-                {{ title }} - {{ date }}
-            </li>
-        </ul> -->
     </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import Post from './Post';
-
-import api from '../api';
 
 @Component({})
 export default class PostList extends Vue {
-    posts = [];
-    selected = '';
 
-    created() {
-        api.fetchPosts().then(posts => this.posts = posts);
+    get posts() {
+        return this.$store.getters['$_blog/GET_POSTS'];
     };
 
-    selectPost(id) {
-        this.selected = id;
+    /* VUE.JS HOOKS */
+    created() {
+        this.$store.dispatch('$_blog/FETCH_POSTS');
     };
 };
 </script>
