@@ -1,6 +1,6 @@
 <template>
     <div>
-        <template v-for="{ title, date } in posts">
+        <template v-for="{ id, title, date, content } in posts">
             <div class="rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                 <div class="px-6 py-4">
@@ -10,9 +10,12 @@
                             <fa-icon :icon="['far', 'calendar']" /> {{ date }}
                         </div>
                     </div>
-                    <p class="text-grey-darker text-base">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
+                    <p class="text-grey-darker text-base mb-2" v-html="getDescription(content)"></p>
+                    <div class="text-right">
+                        <router-link :to="`/post/${id}`" class="text-sm no-underline">
+                            Read more...
+                        </router-link>
+                    </div>
                 </div>
             </div>
         </template>
@@ -23,12 +26,19 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
+import showdown from 'showdown';
+const converter = new showdown.Converter();
+
 @Component({})
 export default class PostList extends Vue {
 
     get posts() {
         return this.$store.getters['$_blog/GET_POSTS'];
     };
+
+    getDescription(content) {
+        return converter.makeHtml(content);
+    }
 
     /* VUE.JS HOOKS */
     created() {

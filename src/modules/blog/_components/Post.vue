@@ -8,8 +8,6 @@
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
 
-import api from '../api';
-
 @Component({})
 export default class Post extends Vue {
     @Prop({}) id;
