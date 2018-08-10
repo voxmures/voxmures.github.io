@@ -11,8 +11,11 @@ const fetchPost = (sha) => {
 };
 
 /* PUBLIC METHODS */
-const fetchPosts = ({ commit }) => {
+const fetchPosts = ({ commit, getters }) => {
 	return new Promise((resolve, reject) => {
+		if (getters[Types.GETTERS.GET_POSTS].length > 0)
+			resolve();
+		
 		return api.fetchPosts()
 		.then((contents) => {
 			Promise.all(contents.map(content => fetchPost(content.sha)))

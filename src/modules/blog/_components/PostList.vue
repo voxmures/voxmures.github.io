@@ -10,9 +10,9 @@
                             <fa-icon :icon="['far', 'calendar']" /> {{ date }}
                         </div>
                     </div>
-                    <p class="text-grey-darker text-base mb-2" v-html="getDescription(content)"></p>
+                    <div class="text-grey-darker text-base mb-2" v-html="getDescription(content)"></div>
                     <div class="text-right">
-                        <router-link :to="`/post/${id}`" class="text-sm no-underline">
+                        <router-link :to="`/blog/${id}`" class="text-sm no-underline">
                             Read more...
                         </router-link>
                     </div>
@@ -33,16 +33,11 @@ const converter = new showdown.Converter();
 export default class PostList extends Vue {
 
     get posts() {
-        return this.$store.getters['$_blog/GET_POSTS'];
+        return this.$store.getters['$_blog/GET_POSTS']; // TODO: Use types
     };
 
     getDescription(content) {
         return converter.makeHtml(content);
-    }
-
-    /* VUE.JS HOOKS */
-    created() {
-        this.$store.dispatch('$_blog/FETCH_POSTS');
     };
 };
 </script>

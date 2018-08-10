@@ -3,11 +3,12 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import { Home } from './views';
+import { Home, Blog } from './views';
 
 const routes = [
 	{ name: 'home', path: '/', component: Home },
-	// { name: 'post', path: '/post/:sha', component: Post },
+	// { name: 'blog', path: '/blog', component: Blog },
+	{ name: 'post', path: '/blog/:id', component: Blog, props: true },
 ];
 
 export default new VueRouter({ 

@@ -1,6 +1,6 @@
 export default class ModuleManager {
 	_store = null;
-	_modules = new Map();
+	_modules = [];
 
 	constructor(store) {
 		this._store = store;
@@ -14,13 +14,14 @@ export default class ModuleManager {
 	};
 
 	isRegistered(name) {
-		return this._modules.get(name);
+		return this._modules.some(m => m === name);
 	};
 
 	_register(module) {
 		let m = module(this._store);
 		if (!this.isRegistered(m.module.name)) {
 			m.register();
+			this._modules.push(m.module.name);
 		}
 	};
 };

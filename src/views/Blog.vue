@@ -1,7 +1,5 @@
 <template>
-	<div class="w-1/3 m-auto">
-		<PostList></PostList>
-	</div>
+	<Post :id="id"></Post>
 </template>
 
 <script>
@@ -10,17 +8,18 @@ import { Component } from 'vue-property-decorator';
 
 import Blog from '@/modules/blog';
 
-import PostList from '@/modules/blog/_components/PostList';
+import Post from '@/modules/blog/_components/Post';
 
 @Component({
 	modules: {
 		Blog
 	},
 	components: {
-		PostList
-	}
+		Post
+	},
+	props: ['id']
 })
-export default class Home extends Vue {
+export default class BlogView extends Vue {
     /* VUE.JS HOOKS */
     created() {
         this.$store.dispatch('$_blog/FETCH_POSTS'); // TODO: Use types

@@ -1,22 +1,19 @@
 <template>
-    <article>
-        {{ content }}
+    <article v-if="post">
+        {{ post.content }}
     </article>
 </template>
 
 <script>
 import Vue from 'vue';
-import { Component, Prop, Watch } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 
-@Component({})
+@Component({
+	props: ['id']
+})
 export default class Post extends Vue {
-    @Prop({}) id;
-
-    content = '';
-
-    @Watch('id')
-    onIdChanged(id) {
-        api.getPost(id).then(post => this.content = post);
+    get post() {
+    	return this.$store.getters['$_blog/GET_POST'](this.id);	// TODO: Use types
     };
 };
 </script>
