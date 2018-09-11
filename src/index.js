@@ -10,9 +10,8 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 const store = new Vuex.Store();
 
-import { default as ModuleManager, ModuleMixin } from './utils/module';
-Vue.prototype.$modules = new ModuleManager(store);
-Vue.mixin(ModuleMixin);
+// import Module from './utils/module';
+// Vue.mixin(Module(store));
 
 new Vue({
     el: '#app',

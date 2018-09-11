@@ -5,7 +5,7 @@
                 <h1>My blog</h1>
             </slot>
         </header> -->
-        <div class="flex-grow bg-white p-2">
+        <div class="flex-grow">
             <slot name="content"></slot>
         </div>
         <!-- <footer class="bg-blue text-white text-center p-2">

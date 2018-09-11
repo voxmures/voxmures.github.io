@@ -3,12 +3,12 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import { Home, Blog } from './views';
+import { Blog, BlogRoutes } from './modules';
 
+// TODO: Register children routes dynamically in each module
+// PR #2064 (https://github.com/vuejs/vue-router/pull/2064)
 const routes = [
-	{ name: 'home', path: '/', component: Home },
-	// { name: 'blog', path: '/blog', component: Blog },
-	{ name: 'post', path: '/blog/:id', component: Blog, props: true },
+	{ path: '/', component: Blog, children: BlogRoutes },
 ];
 
 export default new VueRouter({ 

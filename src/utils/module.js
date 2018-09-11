@@ -1,4 +1,4 @@
-export default class ModuleManager {
+class ModuleManager {
 	_store = null;
 	_modules = [];
 
@@ -6,61 +6,53 @@ export default class ModuleManager {
 		this._store = store;
 	};
 
-	register(modules) {
-		let target = Object.values(modules);
-		for (let t of target) {
-			this._register(t);
+	register(module) {
+		let name = module.name;
+		if (!this.isRegistered(name)) {
+			this._store.registerModule('$_' + name, module);
+			this._modules.push(name);
 		}
 	};
 
 	isRegistered(name) {
 		return this._modules.some(m => m === name);
 	};
-
-	_register(module) {
-		let m = module(this._store);
-		if (!this.isRegistered(m.module.name)) {
-			m.register();
-			this._modules.push(m.module.name);
-		}
-	};
 };
 
-export class Store {
-	name = '';
-	namespaced = true;
-	state = {};
-	actions = {};
-	mutations = {};
-	getters = {};
+// const Module = (name, store) => {
+// 	const modules = new ModuleManager(store);
+// 	return function (Component) {
+		
+// 	}
+// };
+// export default Module;
 
-	constructor(options) {
-		Object.assign(this, options);
-	};
-};
+// export class Store {
+// 	name = '';
+// 	namespaced = true;
+// 	state = {};
+// 	actions = {};
+// 	mutations = {};
+// 	getters = {};
 
-const moduleDecorator = (name, _store) => {
-	return function decorator(Class) {
-		return (store) => {
-			let module = new Class(_store);
-			return {
-				module,
-				register: () => {
-					store.registerModule('$_' + name, module);
-					if (typeof module['init'] === 'function')
-						module.init(store);
-				}
-			};
-		}
-	}
-};
-export { moduleDecorator as Module };
+// 	constructor(options) {
+// 		Object.assign(this, options);
+// 	};
+// };
 
-const moduleMixin = {
-	created() {
-		if (this.$options.modules) {
-			this.$modules.register(this.$options.modules);
-		}
-	}
-};
-export { moduleMixin as ModuleMixin };
+// const moduleDecorator = (name, _store) => {
+// 	return function decorator(Class) {
+// 		return () => {
+// 			const module = new Class(_store);
+// 			return {
+// 				module,
+// 				register: () => {
+// 					store.registerModule('$_' + name, module);
+// 					if (typeof module['init'] === 'function')
+// 						module.init(store);
+// 				}
+// 			};
+// 		}
+// 	}
+// };
+// export { moduleDecorator as Module };
