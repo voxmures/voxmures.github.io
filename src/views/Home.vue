@@ -1,6 +1,6 @@
 <template>
-	<div class="w-1/3 m-auto">
-		<PostList></PostList>
+	<div class="h-screen flex items-center bg-red-chinese">
+		<img src="img/logo.png" alt="Logo" class="m-auto">
 	</div>
 </template>
 
@@ -8,22 +8,8 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
-import Blog from '@/modules/blog';
-
-import PostList from '@/modules/blog/_components/PostList';
-
-@Component({
-	modules: {
-		Blog
-	},
-	components: {
-		PostList
-	}
-})
+@Component({})
 export default class Home extends Vue {
-    /* VUE.JS HOOKS */
-    created() {
-        this.$store.dispatch('$_blog/FETCH_POSTS'); // TODO: Use types
-    };
+    
 };
 </script>
