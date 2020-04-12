@@ -1,0 +1,19 @@
+/*!
+ * Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(content/fonts/fa-solid-900.eot);
+  src: url(content/fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(content/fonts/fa-solid-900.woff2) format("woff2"), url(content/fonts/fa-solid-900.woff) format("woff"), url(content/fonts/fa-solid-900.ttf) format("truetype"), url(content/fonts/fa-solid-900.svg#fontawesome) format("svg"); }
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9ub2RlX21vZHVsZXMvQGZvcnRhd2Vzb21lL2ZvbnRhd2Vzb21lLWZyZWUvY3NzL3NvbGlkLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLGlUQUFpVDs7QUFFalQ7QUFDQTtBQUNBO0FBQ0EsbUJBQW1CIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyohXG4gKiBGb250IEF3ZXNvbWUgRnJlZSA1LjEzLjAgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb21cbiAqIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgKEljb25zOiBDQyBCWSA0LjAsIEZvbnRzOiBTSUwgT0ZMIDEuMSwgQ29kZTogTUlUIExpY2Vuc2UpXG4gKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ0ZvbnQgQXdlc29tZSA1IEZyZWUnO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiA5MDA7XG4gIGZvbnQtZGlzcGxheTogYmxvY2s7XG4gIHNyYzogdXJsKGNvbnRlbnQvZm9udHMvZmEtc29saWQtOTAwLmVvdCk7XG4gIHNyYzogdXJsKGNvbnRlbnQvZm9udHMvZmEtc29saWQtOTAwLmVvdD8jaWVmaXgpIGZvcm1hdChcImVtYmVkZGVkLW9wZW50eXBlXCIpLCB1cmwoY29udGVudC9mb250cy9mYS1zb2xpZC05MDAud29mZjIpIGZvcm1hdChcIndvZmYyXCIpLCB1cmwoY29udGVudC9mb250cy9mYS1zb2xpZC05MDAud29mZikgZm9ybWF0KFwid29mZlwiKSwgdXJsKGNvbnRlbnQvZm9udHMvZmEtc29saWQtOTAwLnR0ZikgZm9ybWF0KFwidHJ1ZXR5cGVcIiksIHVybChjb250ZW50L2ZvbnRzL2ZhLXNvbGlkLTkwMC5zdmcjZm9udGF3ZXNvbWUpIGZvcm1hdChcInN2Z1wiKTsgfVxuXG4uZmEsXG4uZmFzIHtcbiAgZm9udC1mYW1pbHk6ICdGb250IEF3ZXNvbWUgNSBGcmVlJztcbiAgZm9udC13ZWlnaHQ6IDkwMDsgfVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/
